@@ -23,10 +23,9 @@ def sentence_to_word_list(sentence):
     return re.findall(r"\w+", sentence)
 
 class Topic:
-    def __init__(self, name, keywords = [], similarity_threshold = 0.8):
+    def __init__(self, name, keywords = []):
         self.name = name
         self.keywords = list_uniformization(keywords)
-        self.similarity_threshold = similarity_threshold
 
     def is_keyword(self, word):
         w = word_uniformization(word)
@@ -42,7 +41,7 @@ class Topic:
         if w in self.keywords:
             self.keywords.remove(w)
 
-    def get_score(self, sentence):
+    def get_score(self, sentence, similarity_threshold):
         s2 = sentence_to_word_list(sentence)
 
         words_present, words_absent = [], []
@@ -50,7 +49,7 @@ class Topic:
             w2 = word_uniformization(w)
             isIn = 0
             for r in self.keywords:
-                if compare_words(w2, r) > self.similarity_threshold:
+                if compare_words(w2, r) > similarity_threshold:
                     words_present.append(w2)
                     isIn = 1
                     break
