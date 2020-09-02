@@ -2,7 +2,7 @@ import pandas as pd
 from Topic import Topic
 from Topic_manager import Topic_manager
 
-f = open("datablender_comments.sql", "r")
+f = open("Data/datablender_comments.sql", "r")
 lines = f.readlines()
 f.close()
 
@@ -13,7 +13,7 @@ for l in lines:
         if com != " '":
             comments.append(com)
 
-dfs = pd.read_excel("ETUDE-25-06-20.xlsx", sheet_name = "TERMES")
+dfs = pd.read_excel("Data/ETUDE-25-06-20.xlsx", sheet_name = "TERMES")
 categories = dfs.columns.tolist()
 
 topics = []
