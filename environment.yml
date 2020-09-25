@@ -1,5 +1,6 @@
 name: db_textt
-
+channels:
+  - conda-forge
 dependencies:
   - pandas=1.1
   - xlrd=1.2
