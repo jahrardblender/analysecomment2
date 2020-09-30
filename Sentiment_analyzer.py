@@ -6,6 +6,7 @@ import gc
 
 class Sentiment_analyzer:
     def __init__(self, model_path = "./pretrained_models/sentiment_analysis/", threshold = 0.5):
+        pass
         self.threshold = threshold # If the score of a comment is below this threshold, it is considered neutral
 
         self.tokenizer = AutoTokenizer.from_pretrained("./pretrained_models/sentiment_analysis/")

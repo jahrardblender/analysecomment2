@@ -1,7 +1,11 @@
-name: db_textt
+name: dc_text
 channels:
   - conda-forge
 dependencies:
   - pandas=1.1
   - xlrd=1.2
+  - pytorch
+  - dataclasses=0.7
   - transformers=3.1
+  - tensorflow=2.2.0
+
